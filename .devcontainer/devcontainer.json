@@ -12,14 +12,28 @@
 	// For use with PHP or Apache (e.g.php -S localhost:8080 or apache2ctl start)
 	"forwardPorts": [
 		8080,
-		3306
+		3306,
+		8000,
+		5173
 	],
+	"portsAttributes": {
+		"8000": {
+			"label": "Laravel App"
+		},
+		"5173": {
+			"label": "Vite App"
+		},
+		"3306": 
+		{
+			"label" : "Maria DB"
+		}
+	},
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {}
-	}
+	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
+	"postCreateCommand": "cp .env.example .env && composer install && npm install && php artisan key:generate && php artisan migrate --force && php artisan migrate:fresh --seed"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
