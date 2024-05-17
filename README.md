@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Larvel 11 Codespace
+## About Laravel 11 Codespace
 
 Laravel 11 Codespace is a template repository for working on laravel in a Github codespace. The main branch is setup to use the [Jetstream](https://jetstream.laravel.com/introduction.html) starter kit. Running the application is as simple as following the [instructions](https://docs.github.com/en/codespaces/developing-in-a-codespace/creating-a-codespace-for-a-repository?tool=webui#creating-a-codespace-for-a-repository) on how to launch a new enviroment. 
 
