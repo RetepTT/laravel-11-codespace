@@ -29,11 +29,12 @@
 		}
 	},
 	"features": {
-		"ghcr.io/devcontainers/features/node:1": {}
+		"ghcr.io/devcontainers/features/node:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "cp .env.example .env && composer install && npm install && php artisan key:generate && php artisan migrate --force && php artisan migrate:fresh --seed"
+	"postCreateCommand": "cp .env.example .env && composer install && npm install && php artisan key:generate && php artisan migrate --force && php artisan migrate:fresh --seed && gh codespace ports visibility 5173:public -c $CODESPACE_NAME"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
